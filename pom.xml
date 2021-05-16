@@ -27,6 +27,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -47,7 +52,9 @@
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
+<!--				https://stackoverflow.com/questions/63468269/maven-plugin-not-found-in-intellij-ide-->
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.4.5</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -57,14 +64,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                </configuration>
-            </plugin>
         </plugins>
 	</build>
 
