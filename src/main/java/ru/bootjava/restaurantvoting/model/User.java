@@ -1,8 +1,6 @@
 package ru.bootjava.restaurantvoting.model;
 
-import ch.qos.logback.classic.db.names.ColumnName;
 import lombok.*;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -17,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @ToString(callSuper = true, exclude = {"password"})
-public class User extends AbstractPersistable<Integer> {
+public class User extends BaseEntity {
 
     @Column(name = "email", nullable = false, unique = true)
     @Email
@@ -25,11 +23,11 @@ public class User extends AbstractPersistable<Integer> {
     @Size(max = 128)
     private String email;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     @Size(max = 128)
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     @Size(max = 128)
     private String lastName;
 
