@@ -27,3 +27,8 @@ spring:
     username: sa
     password:
   h2.console.enabled: true
+
+  data.rest:
+
+      base-path: /api
+      returnBodyonCreate: true
