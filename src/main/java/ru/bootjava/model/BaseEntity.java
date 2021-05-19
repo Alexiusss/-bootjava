@@ -1,4 +1,4 @@
-package ru.bootjava.restaurantvoting.model;
+package ru.bootjava.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

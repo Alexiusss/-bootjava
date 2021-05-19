@@ -1,11 +1,11 @@
-package ru.bootjava.restaurantvoting;
+package ru.bootjava;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ru.bootjava.restaurantvoting.repository.UserRepository;
+import ru.bootjava.repository.UserRepository;
 
 @SpringBootApplication
 @AllArgsConstructor
