@@ -19,9 +19,9 @@ spring:
       # Absolute path
       #    url: jdbc:h2:C:/projects/bootjava/restorant-voting/db/voting
       #    tcp: jdbc:h2:tcp://localhost:9092/C:/projects/bootjava/restorant-voting/db/voting
-      # Relative path form current dir
-      #    url: jdbc:h2:./db/voting
-      # Relative path from home
+    # Relative path form current dir
+    #    url: jdbc:h2:./db/voting
+    # Relative path from home
     #    url: jdbc:h2:~/voting
     #    tcp: jdbc:h2:tcp://localhost:9092/~/voting
     username: sa
@@ -31,6 +31,7 @@ spring:
   data.rest:
 
     base-path: /api
+    defaultPageSize: 20
     returnBodyonCreate: true
 
 #    #  https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#security-properties
@@ -44,11 +45,19 @@ logging:
   level:
     root: WARN
     ru.javaops.bootjava: DEBUG
-#    org.springframework.security.web.FilterChainProxy: DEBUG
+  #    org.springframework.security.web.FilterChainProxy: DEBUG
 
-  # Jackson Serialization Issue Resolver
-  #  jackson:
-  #    visibility.field: any
-  #    visibility.getter: none
-  #    visibility.setter: none
-  #    visibility.is-getter: none
+server:
+  servlet:
+    encoding:
+      charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+      enabled: true # Enable http encoding support
+      force: true
+
+# Jackson Serialization Issue Resolver
+#  jackson:
+#    visibility.field: any
+#    visibility.getter: none
+#    visibility.setter: none
+
+#    visibility.is-getter: none
