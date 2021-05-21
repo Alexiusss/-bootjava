@@ -1,8 +1,10 @@
 package ru.bootjava.util;
 
+import lombok.experimental.UtilityClass;
 import ru.bootjava.error.IllegalRequestDataException;
 import ru.bootjava.model.BaseEntity;
 
+@UtilityClass
 public class ValidationUtil {
 
     public static void checkNew(BaseEntity entity) {

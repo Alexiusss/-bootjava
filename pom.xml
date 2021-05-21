@@ -6,6 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.5</version>
+<!--		<version>2.4.4</version>-->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.bootjava</groupId>
@@ -93,6 +94,8 @@
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+<!--							https://stackoverflow.com/questions/65380359/lomboks-access-to-jdk-compilers-internal-packages-incompatible-with-java-16-->
+<!--							<version>1.18.16</version>-->
 						</exclude>
 					</excludes>
 				</configuration>
