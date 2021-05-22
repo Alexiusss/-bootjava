@@ -1,5 +1,6 @@
 package ru.bootjava.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,9 @@ import ru.bootjava.AuthUser;
 import ru.bootjava.model.Role;
 import ru.bootjava.model.User;
 import ru.bootjava.repository.UserRepository;
+import ru.bootjava.util.JsonUtil;
 
+import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 @Configuration
@@ -29,6 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final PasswordEncoder PASSWORD_ENCODER = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     private final UserRepository userRepository;
+    private final ObjectMapper objectMapper;
+
+    @PostConstruct
+    void setMapper() {
+        JsonUtil.setObjectMapper(objectMapper);
+    }
 
     @Bean
     public UserDetailsService userDetailsService() {
