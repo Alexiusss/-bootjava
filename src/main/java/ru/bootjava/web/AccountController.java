@@ -56,7 +56,7 @@ public class AccountController implements RepresentationModelProcessor<Repositor
 
     private final UserRepository userRepository;
 
-    @GetMapping(produces = MediaTypes.HAL_FORMS_JSON_VALUE)
+    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
     public EntityModel<User> get(@AuthenticationPrincipal AuthUser authUser) {
         log.info("get {}", authUser);
         return ASSEMBLER.toModel(authUser.getUser());
